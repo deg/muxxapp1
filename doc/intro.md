@@ -1,3 +1,3 @@
 # Introduction to mummy
 
-TODO: write [great documentation](http://jacobian.org/writing/great-documentation/what-to-write/)
+Mummy is a sample muxx project which I will use to test new ideas.
