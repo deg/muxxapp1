@@ -5,7 +5,8 @@
 /.repl
 /checkouts
 /classes
+/docs
 /out
+/pom.xml*
+/resources/public/js/mummy*.js
 /target
-pom.xml*
-

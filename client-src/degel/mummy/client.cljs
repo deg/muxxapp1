@@ -8,7 +8,6 @@
             [clojure.browser.repl]))
 
 (defn ^:export init []
-  (dom/set-html! (dom/by-id "page") "No callback!")
   (remote-callback
       :project-versions [[["mummy" "mummy"]
                           ["muxx" "muxx"]

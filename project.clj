@@ -10,20 +10,17 @@
 ;;; You must not remove this notice, or any other, from this software.
 
 
-(defproject mummy "0.1.0-SNAPSHOT"
+(defproject degel/mummy "0.1.0"
   :description "A simple muxx project which I will use mostly to test new ideas"
-  :url "https://github.com/deg/degel-clojure-utils"
+  :url "https://github.com/deg/mummy"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [org.clojure/clojurescript "0.0-1934"]
+                 [org.clojure/clojurescript "0.0-2014g"]
 
                  ;; Degel's Clojure utility library
                  [degel-clojure-utils "0.1.15"]
-
-                 ;; Degel's Redmapel state tree library
-                 [redmapel "0.1.7"]
 
                  ;; Degel's website multiplexer
                  [muxx "0.1.2"]
@@ -45,23 +42,15 @@
                  [hiccups "0.2.0"]
 
                  ;; Ring/Compojure RPC
-                 ;; [TODO] {FogBugz:139} Look at the other Shoreleave libs too. Support for
-                 ;;        local storage, browser history, repl, etc.
                  [shoreleave/shoreleave-remote-ring "0.3.0"]
                  [shoreleave/shoreleave-remote "0.3.0"]
 
-                 ;; Testing from ClojureScript
-                 [com.cemerick/clojurescript.test "0.0.4"]
-
                  ;; Clojure/ClojureScript validation
-                 [com.cemerick/valip "0.3.2"]
-
-                 ;; Clojure interface to AWS SimpleDB
-                 [com.cemerick/rummage "1.0.1" :exclusions [commons-codec]]]
+                 [com.cemerick/valip "0.3.2"]]
 
   :plugins [[lein-cljsbuild "0.3.3"]
             [lein-ring "0.8.3" :exclusions [org.clojure/clojure]]
-            [com.cemerick/austin "0.1.1"]]
+            [com.cemerick/austin "0.1.3"]]
 
   :min-lein-version "2.0.0"
 
@@ -72,9 +61,7 @@
 
   :cljsbuild {:crossovers [valip.core
                            valip.predicates
-                           degel.cljutil.utils
-                           degel.redmapel
-                           degel.redmapel.node]
+                           degel.cljutil.utils]
               ;; NOTE {FogBugz:134}
               ;; Can't do "lein cljsbuild auto" of both builds together. Instead, need
               ;; to say "lein cljsbuild once" or "lein cljsbuild auto dev" or
