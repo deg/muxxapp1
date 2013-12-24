@@ -10,7 +10,7 @@
 ;;; You must not remove this notice, or any other, from this software.
 
 
-(defproject degel/mummy "0.1.0"
+(defproject degel/mummy "0.1.1"
   :description "A simple muxx project which I will use mostly to test new ideas"
   :url "https://github.com/deg/mummy"
   :license {:name "Eclipse Public License"
@@ -20,10 +20,10 @@
                  [org.clojure/clojurescript "0.0-2014"]
 
                  ;; Degel's Clojure utility library
-                 [degel-clojure-utils "0.1.15"]
+                 [degel/degel-clojure-utils "0.1.20"]
 
                  ;; Degel's website multiplexer
-                 [muxx "0.1.2"]
+                 [degel/muxx "0.1.5"]
 
                  ;; Needed, I think, in order to build a runnable uberjar with compojure
                  [ring/ring-jetty-adapter "1.1.8"]

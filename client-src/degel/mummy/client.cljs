@@ -9,12 +9,16 @@
 
 (defn ^:export init []
   (remote-callback
-      :project-versions [[["mummy" "mummy"]
-                          ["muxx" "muxx"]
-                          ["degel-clojure-utils" "degel-clojure-utils"]
+      :project-versions [[["degel" "mummy"]
+                          ["degel" "muxx"]
+                          ["degel" "degel-clojure-utils"]
                           ["org.clojure" "clojurescript"]]]
     (fn [v]
       (dom/set-html! (dom/by-id "page")
         (html [:div#versions (str/join
                               "<br>"
-                              (map (fn [[_ artifact version]] (str artifact ": " version)) v))])))))
+                              (map (fn [[group-id artifact version]]
+                                     (str (if (= group-id artifact)
+                                            artifact
+                                            (str group-id "/" artifact))
+                                          ": " version)) v))])))))
