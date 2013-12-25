@@ -39,7 +39,7 @@
                  [enlive "1.1.1"]
 
                  ;; HTML generation for Clojurescript (Ported from Clojure Hiccup)
-                 [hiccups "0.2.0"]
+                 [hiccups "0.3.0"]
 
                  ;; Ring/Compojure RPC
                  [shoreleave/shoreleave-remote-ring "0.3.0"]
