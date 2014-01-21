@@ -10,7 +10,7 @@
 ;;; You must not remove this notice, or any other, from this software.
 
 
-(defproject degel/mummy "0.1.3-SNAPSHOT"
+(defproject degel/mummy "0.1.3"
   :description "A simple muxx project which I will use mostly to test new ideas"
   :url "https://github.com/deg/mummy"
   :license {:name "Eclipse Public License"
@@ -46,11 +46,19 @@
                  [shoreleave/shoreleave-remote "0.3.0"]
 
                  ;; Clojure/ClojureScript validation
-                 [com.cemerick/valip "0.3.2"]]
+                 [com.cemerick/valip "0.3.2"]
 
-  :plugins [[lein-cljsbuild "0.3.3"]
+                 ;; Testing from ClojureScript
+                 [com.cemerick/clojurescript.test "0.2.1"]]
+
+  :hooks [leiningen.cljsbuild]
+
+  :plugins [[lein-cljsbuild "1.0.1"]
             [lein-ring "0.8.3" :exclusions [org.clojure/clojure]]
-            [com.cemerick/austin "0.1.3"]]
+            [com.cemerick/austin "0.1.3"]
+
+            ;; Testing from ClojureScript
+            [com.cemerick/clojurescript.test "0.2.1"]]
 
   :min-lein-version "2.0.0"
 
@@ -62,28 +70,19 @@
   :cljsbuild {:crossovers [valip.core
                            valip.predicates
                            degel.cljutil.utils]
-              ;; NOTE {FogBugz:134}
-              ;; Can't do "lein cljsbuild auto" of both builds together. Instead, need
-              ;; to say "lein cljsbuild once" or "lein cljsbuild auto dev" or
-              ;; "lein cljsbuild auto production".
-              ;; This is because of a problem with using :libs[""]. See
-              ;; https://github.com/emezeske/lein-cljsbuild/issues/219
               :builds {:dev
                        {:source-paths ["client-src"]
                         :compiler {:libs [""] ;; See https://github.com/cemerick/pprng/
+                                   ;; :source-map "receipts-dev.js.map"
                                    :output-to "resources/public/js/mummy-dev.js"
                                    :optimizations :simple ;; or :whitespace
-                                   :pretty-print true
-                                   ;; :source-map "receipts-dev.js.map"
-                                   }
-                        :jar false},
+                                   :pretty-print true}},
                        :production
                        {:source-paths ["client-src"]
                         :compiler {:libs [""] ;; See https://github.com/cemerick/pprng/
                                    :output-to "resources/public/js/mummy.js"
-                                   :optimizations :advanced
-                                   :pretty-print false
                                    ;; :source-map "receipts.js.map"
-                                   }
+                                   :optimizations :advanced
+                                   :pretty-print false}
                         :jar true}}
               :test-commands {"unit-tests" ["runners/phantomjs.js" "resources/public/js/receipts-dev.js"]}})
