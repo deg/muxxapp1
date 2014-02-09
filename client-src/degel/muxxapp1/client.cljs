@@ -1,4 +1,4 @@
-(ns degel.mummy.client
+(ns degel.muxxapp1.client
   (:require-macros [hiccups.core :refer [html]])
   (:require [clojure.string :as str]
             [domina :as dom :refer [log]]
@@ -9,7 +9,7 @@
 
 (defn ^:export init []
   (remote-callback
-      :project-versions [[["degel" "mummy"]
+      :project-versions [[["degel" "muxxapp1"]
                           ["degel" "muxx"]
                           ["degel" "degel-clojure-utils"]
                           ["org.clojure" "clojurescript"]]]

@@ -10,9 +10,9 @@
 ;;; You must not remove this notice, or any other, from this software.
 
 
-(defproject degel/mummy "0.1.4"
+(defproject degel/muxxapp1 "0.1.4"
   :description "A simple muxx project which I will use mostly to test new ideas"
-  :url "https://github.com/deg/mummy"
+  :url "https://github.com/deg/muxxapp1"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
@@ -60,7 +60,7 @@
   :min-lein-version "2.0.0"
   :pedantic? :abort
 
-  :main degel.mummy.server ;; For standalone deployment
+  :main degel.muxxapp1.server ;; For standalone deployment
 
   :source-paths ["server-src"]
   :test-paths ["test"]
@@ -72,13 +72,13 @@
                        {:source-paths ["client-src"]
                         :compiler {:libs [""] ;; See https://github.com/cemerick/pprng/
                                    ;; :source-map "receipts-dev.js.map"
-                                   :output-to "resources/public/js/mummy-dev.js"
+                                   :output-to "resources/public/js/muxxapp1-dev.js"
                                    :optimizations :simple ;; or :whitespace
                                    :pretty-print true}},
                        :production
                        {:source-paths ["client-src"]
                         :compiler {:libs [""] ;; See https://github.com/cemerick/pprng/
-                                   :output-to "resources/public/js/mummy.js"
+                                   :output-to "resources/public/js/muxxapp1.js"
                                    ;; :source-map "receipts.js.map"
                                    :optimizations :advanced
                                    :pretty-print false}

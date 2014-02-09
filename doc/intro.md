@@ -1,3 +1,3 @@
-# Introduction to mummy
+# Introduction to muxxapp1
 
-Mummy is a sample muxx project which I will use to test new ideas.
+Muxxapp1 is a sample muxx project which I will use to test new ideas.

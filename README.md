@@ -1,4 +1,4 @@
-# mummy
+# muxxapp1
 
 A simple muxx project which I will use mostly to test new ideas
 
